@@ -1,22 +1,3 @@
-pacotes <- c("rgdal","plotly","tidyverse","knitr","kableExtra","gridExtra",
-             "png","grid","magick","rgl","devtools","GISTools","rayshader",
-             "tmap","broom","sf")
-
-if(sum(as.numeric(!pacotes %in% installed.packages())) != 0){
-  instalador <- pacotes[!pacotes %in% installed.packages()]
-  for(i in 1:length(instalador)) {
-    install.packages(instalador, dependencies = T)
-    break()}
-  sapply(pacotes, require, character = T) 
-} else {
-  sapply(pacotes, require, character = T) 
-}
-
-# Outras Opções e Dicas de Visualização de Objetos Espaciais ------------------
-
-
-# Para começar a explorar algumas opções de visualização de mapas, vamos começar
-# com um shapefile da Região Centro-Oeste do Brasil.
 
 # Carregando um shapefile da Região Centro-Oeste brasileira
 shp_centro_oeste <- readOGR(dsn = "shapefile_centrooeste", 
